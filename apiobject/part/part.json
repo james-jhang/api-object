@@ -1,0 +1,45 @@
+{
+    "partMake": {
+        "value": "3Com"
+    },
+    "partModel": {
+        "id": 6
+    },
+    "trackingType": {
+        "code": 93352
+    },
+    "serialNumber": {
+        "value": "123456"
+    },
+    "partDesc": {
+        "value": "1"
+    },
+    "countInStock": {
+        "value": 1
+    },
+    "countInUse": {
+        "value": 0
+    },
+    "manufactureDate": {
+        "value": null
+    },
+    "threshold": {
+        "value": 0
+    },
+    "partThresholdContacts": {
+        "value": []
+    },
+    "purchasePrice": {
+        "value": null
+    },
+    "partStatus": {
+        "id": 2463
+    },
+    "location": {
+        "id": 1
+    },
+    "locationReference": {
+        "value": null
+    },
+    "partCustomFields": []
+}

@@ -16,6 +16,12 @@ class ValueID:
 
 class Lookup:
     def __init__(self, user) -> None:
+        self.user = user
         self.lookup = self.lookup = user.http.request(
             'GET', '/dcimoperations/lookups/ALL_LKS'
+        ).json()['lookup']
+    
+    def field_detail(self, field) -> None:
+        return self.user.http.request(
+            'GET', '/dcimoperations/lookups/%s' % field
         ).json()['lookup']

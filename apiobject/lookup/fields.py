@@ -35,3 +35,29 @@ class SoltType:
 	POWER_SUPPLY_SLOT = ValueID('Power Supply Slot', 93257)
 
 
+class TrackingType:
+	COLLECTIVELY = ValueID('Collectively', 93352)
+	INDIVIDUALLY = ValueID('Individually', 93351)
+
+
+class PartStatus:
+	BROKEN = ValueID('Broken', 2447)
+	LOST = ValueID('Lost', 2448)
+	IN_STOCK = ValueID('In Stock', 2463)
+	IN_USE = ValueID('In Use', 2464)
+	ARCHIVED = ValueID('Archived', 2465)
+
+
+class Location:
+	ACDC = ValueID('ACDC', 41)
+	DC_FL_RO = ValueID('DC > FL > RO', 39)
+	DGS_CHANGECONTROL = ValueID('DGS-CHANGECONTROL', 40)
+	RBAC0 = ValueID('RBAC0', 35)
+	RBAC1 = ValueID('RBAC1', 18)
+	SITE_A = ValueID('SITE A', 1)
+	SITE_B = ValueID('SITE B', 2)
+	SITE_C = ValueID('SITE C', 7)
+	SITE_COLO = ValueID('SITE COLO', 8)
+	SITE_IDF = ValueID('SITE IDF', 6)
+
+
