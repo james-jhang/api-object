@@ -33,8 +33,17 @@ class PartClass(Resource):
 
 
 class Image:
-    pass
-    # TODO
+    def __init__(self, user: User) -> None:
+        self.user = user
+        self.uri = None
+
+    def upload(self, image):
+        file = {'file':  ("1.png", open(image, "rb"), "image/png")}
+        resp = self.user.http.request('POST', '/part_models/images', files=file).json()
+        self.uri = resp['results'][0]['newFileName']
+        # ['results'][0]['newFileName']
+
+
 
 class PartModel(Resource):
     def __init__(self, user: User) -> None:
