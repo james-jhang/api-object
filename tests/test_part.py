@@ -1,7 +1,7 @@
 import pytest
 
 from apiobject.lookup.fields import *
-from apiobject.part.part import PartClass, PartModel, Part
+from apiobject.part.part import PartClass, PartModel, Part, Image
 from apiobject.user.user import Administrator
 
 @pytest.fixture
@@ -37,6 +37,22 @@ class TestPart:
         part_model = PartModel(user=admin)
         part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET)
         #TODO assert
+
+        # teardown
+        part_model.delete()
+        part_class.delete()
+
+    def test_part_model_with_image(self, admin):
+        part_class = PartClass(user=admin)
+        part_class.create(
+            class_label='Test Part Class',
+            assignment_level=AssignmentLevel.DATA_PANEL_PORT,
+            classes=[Class.CABINET]
+        )
+        part_model = PartModel(user=admin)
+        image = Image(user=admin)
+        image.upload("C:\\Users\\ssl\\Desktop\\1.PNG")
+        part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET, image=image)
 
         # teardown
         part_model.delete()
