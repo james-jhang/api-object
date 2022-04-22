@@ -2,6 +2,18 @@ from typing import List
 
 from ..resource import Resource
 from ..user.user import User
+import json
+
+class PartsManagement:
+    def __init__(self, user: User) -> None:
+        self.user = user
+
+    def enable_parts_management(self):
+        resp = self.user.http.request('PUT', '/settings/dctrack', headers={'Content-Type': 'application/json'}, data=json.dumps({"settingType":"APPLICATION_SETTING","partsManagementEnabled":True}))
+
+    def disable_parts_management(self):
+        resp = self.user.http.request('PUT', '/settings/dctrack', headers={'Content-Type': 'application/json'}, data=json.dumps({"settingType":"APPLICATION_SETTING","partsManagementEnabled":False}))
+
 
 class PartClass(Resource):
     def __init__(self, user: User, id=None) -> None:
@@ -41,7 +53,6 @@ class Image:
         file = {'file':  ("1.png", open(image, "rb"), "image/png")}
         resp = self.user.http.request('POST', '/part_models/images', files=file).json()
         self.uri = resp['results'][0]['newFileName']
-        # ['results'][0]['newFileName']
 
 
 
