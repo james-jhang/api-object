@@ -1,7 +1,7 @@
 import pytest
 
 from apiobject.lookup.fields import *
-from apiobject.part.part import Image, PartClass, PartModel
+from apiobject.part.part import PartClass, PartModel, Part, Image
 from apiobject.user.user import Administrator
 
 @pytest.fixture
@@ -10,7 +10,6 @@ def admin():
     admin = Administrator(host, 'admin', 'Lab1321*')
     admin.login()
     yield admin
-
 
 class TestPart:
 
@@ -37,7 +36,7 @@ class TestPart:
         )
         part_model = PartModel(user=admin)
         part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET)
-        # TODO assert
+        #TODO assert
 
         # teardown
         part_model.delete()
@@ -56,5 +55,26 @@ class TestPart:
         part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET, image=image)
 
         # teardown
+        part_model.delete()
+        part_class.delete()
+
+    def test_part(self, admin):
+        part_class = PartClass(user=admin)
+        part_class.create(
+            class_label='Test Part Class',
+            assignment_level=AssignmentLevel.DATA_PANEL_PORT,
+            classes=[Class.CABINET]
+        )
+        part_model = PartModel(user=admin)
+        part_model.create(part_class, '3Com', 'Test Part Model', 'TEST_456', SoltType.CPU_SOCKET)
+        
+        part = Part(user=admin)
+        part.create(
+            part_model, '911 Enable', 'Test Part', PartStatus.IN_STOCK, Location.ACDC, TrackingType.COLLECTIVELY, 
+            8, 2, 7
+        )
+
+        # teardown
+        part.delete()
         part_model.delete()
         part_class.delete()

@@ -1,5 +1,7 @@
 from typing import List
 
+from apiobject.lookup.fields import Location, PartStatus, TrackingType
+
 from ..resource import Resource
 from ..user.user import User
 import json
@@ -115,3 +117,34 @@ class PartModel(Resource):
         payload = {'partModels':[{'partModelId': self.id}]}
         resp = self.user.http.request('PUT', '/part_models/bulk/delete', json=payload).json()
 
+class Part(Resource):
+    def __init__(self, user: User) -> None:
+        super().__init__()
+        self.user = user
+
+    def create(self,
+        part_model: PartModel,
+        make: str,
+        serial_number: str,
+        part_status: PartStatus,
+        location: Location,
+        tracking_type: TrackingType,
+        count_in_stock: int = None,
+        count_in_use: int = None,
+        threshold: int = None, **payload):
+        part_payload = {
+            "partMake":{"value":make}, "partModel":{"id":part_model.id}, "partStatus": {"id": part_status.id},
+            "countInStock":{"value": count_in_stock},"countInUse":{"value": count_in_use},
+            "location": {"id": location.id}, "threshold": {"value": threshold},
+            "serialNumber":{"value": serial_number}, "trackingType": {"code": tracking_type.id}
+        }
+        for uiComponentId, value in payload.items():
+            part_payload.update({uiComponentId:{"value":value}})
+        
+        resp = self.user.http.request('POST', '/parts', json=part_payload).json()
+        self.id = resp['partId']
+        return resp
+    
+    def delete(self):
+        payload = {'parts':[{'partId': self.id}]}
+        resp = self.user.http.request('PUT', '/parts/bulk/delete', json=payload).json()
