@@ -40,6 +40,18 @@ class TrackingType:
 	INDIVIDUALLY = ValueID('Individually', 93351)
 
 
+class CustomFieldDataType:
+	TEXT = ValueID('text', 91016)
+	TEXTAREA = ValueID('textarea', 91017)
+	NUMERIC = ValueID('numeric', 91018)
+	DATE = ValueID('date', 91019)
+	CHECKBOX = ValueID('checkbox', 91020)
+	PICK_LIST = ValueID('pick-list', 91021)
+	MULTI_SELECT_PICK_LIST = ValueID('multi-select pick-list', 91022)
+	TAGS = ValueID('tags', 91023)
+	CONTACTS = ValueID('contacts', 91024)
+
+
 class PartStatus:
 	BROKEN = ValueID('Broken', 2447)
 	LOST = ValueID('Lost', 2448)
@@ -59,5 +71,19 @@ class Location:
 	SITE_C = ValueID('SITE C', 7)
 	SITE_COLO = ValueID('SITE COLO', 8)
 	SITE_IDF = ValueID('SITE IDF', 6)
+
+
+class PartClassField:
+	CPU = ValueID('CPU', 2449)
+	DAUGHTER_BOARD = ValueID('Daughter Board', 2456)
+	HARD_DRIVE = ValueID('Hard Drive', 2450)
+	MPO_CASSETTE = ValueID('MPO Cassette', 2451)
+	NIC = ValueID('NIC', 2452)
+	POWER_SUPPLY = ValueID('Power Supply', 2453)
+	POWER_SUPPLY = ValueID('Power Supply', 2453)
+	POWER_SUPPLY = ValueID('Power Supply', 2453)
+	RAM = ValueID('RAM', 2454)
+	SFP = ValueID('SFP', 2455)
+	SFP = ValueID('SFP', 2455)
 
 

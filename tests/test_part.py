@@ -1,7 +1,7 @@
 import pytest
 
 from apiobject.lookup.fields import *
-from apiobject.part.part import PartClass, PartModel, Part, Image
+from apiobject.part.part import *
 from apiobject.user.user import Administrator
 
 @pytest.fixture
@@ -14,6 +14,8 @@ def admin():
 class TestPart:
 
     def test_part_class(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
         part_class = PartClass(user=admin)
         part_class.create(
             class_label='Test Part Class',
@@ -26,8 +28,11 @@ class TestPart:
 
         # teardown
         part_class.delete()
+        parts_management.disable_parts_management()
 
     def test_part_model(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
         part_class = PartClass(user=admin)
         part_class.create(
             class_label='Test Part Class',
@@ -41,8 +46,11 @@ class TestPart:
         # teardown
         part_model.delete()
         part_class.delete()
+        parts_management.disable_parts_management()
 
     def test_part_model_with_image(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
         part_class = PartClass(user=admin)
         part_class.create(
             class_label='Test Part Class',
@@ -51,14 +59,17 @@ class TestPart:
         )
         part_model = PartModel(user=admin)
         image = Image(user=admin)
-        image.upload("C:\\Users\\ssl\\Desktop\\1.PNG")
+        image.upload(".\\tests\\1.PNG")
         part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET, image=image)
 
         # teardown
         part_model.delete()
         part_class.delete()
+        parts_management.disable_parts_management()
 
     def test_part(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
         part_class = PartClass(user=admin)
         part_class.create(
             class_label='Test Part Class',
@@ -78,3 +89,14 @@ class TestPart:
         part.delete()
         part_model.delete()
         part_class.delete()
+        parts_management.disable_parts_management()
+
+    def test_part_custom_field(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        part_custom_field = CustomField(user=admin)
+        part_custom_field.create('Test Custom Field', 'Part', PartClassField.DAUGHTER_BOARD, CustomFieldDataType.TEXT, True)
+
+        # teardown
+        
+        parts_management.disable_parts_management()

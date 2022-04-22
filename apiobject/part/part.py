@@ -1,6 +1,6 @@
 from typing import List
 
-from apiobject.lookup.fields import Location, PartStatus, TrackingType
+from apiobject.lookup.fields import *
 
 from ..resource import Resource
 from ..user.user import User
@@ -148,3 +148,21 @@ class Part(Resource):
     def delete(self):
         payload = {'parts':[{'partId': self.id}]}
         resp = self.user.http.request('PUT', '/parts/bulk/delete', json=payload).json()
+
+
+class CustomField(Resource):
+    def __init__(self, user: User) -> None:
+        super().__init__()
+        self.user = user
+
+    def create(self, name:str, appliesTo:str, classes:PartClassField, fieldType:CustomFieldDataType, applyToModels=None):
+        payload = {
+            "tiLabel": {"value": name},
+            "cmbAppliedTo": [appliesTo],
+            "cmbClass": None,
+            "cmbUserDefClass": [{"id": classes.id}],
+            "cmbSubclass": {"value": []},
+            "tiType": {"value": {"id": fieldType.id}},
+            "chkApplyToModel": applyToModels
+        }
+        resp = self.user.http.request('POST', '/settings/lists/customFields', json=payload).json()

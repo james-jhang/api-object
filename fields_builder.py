@@ -12,11 +12,13 @@ if __name__ == '__main__':
         'AssignmentLevel': 'PART_ASSIGNMENT_TYPE',
         'Class': 'CLASS',
         'SoltType': 'PART_SLOT_TYPE',
-        'TrackingType' :'PART_TRACKING_TYPE'
+        'TrackingType' :'PART_TRACKING_TYPE',
+        'CustomFieldDataType': 'CUSTOM_FIELD_DATA_TYPE'
     }
     field_detail_key_mapping = {
         'PartStatus': 'PART_STATUS',
-        'Location': 'LOCATION'
+        'Location': 'LOCATION',
+        'PartClass':'PART_CLASS'
     }
     with open(f'./apiobject/lookup/fields.py', 'w') as f:
         f.write('from .lookup import ValueID\n\n')
