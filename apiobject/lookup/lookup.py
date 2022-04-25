@@ -25,3 +25,8 @@ class Lookup:
         return self.user.http.request(
             'GET', '/dcimoperations/lookups/%s' % field
         ).json()['lookup']
+    
+    def subtab_detail(self):
+        return self.user.http.request(
+            'GET', '/settings/lists/subtabs'
+        ).json()

@@ -1,3 +1,4 @@
+import re
 from codecs import lookup
 
 if __name__ == '__main__':
@@ -13,12 +14,15 @@ if __name__ == '__main__':
         'Class': 'CLASS',
         'SoltType': 'PART_SLOT_TYPE',
         'TrackingType' :'PART_TRACKING_TYPE',
-        'CustomFieldDataType': 'CUSTOM_FIELD_DATA_TYPE'
+        'CustomFieldDataType': 'CUSTOM_FIELD_DATA_TYPE',
+        'ItemStatus': 'ITEM_STATUS'
     }
     field_detail_key_mapping = {
         'PartStatus': 'PART_STATUS',
         'Location': 'LOCATION',
-        'PartClass':'PART_CLASS'
+        'PartClass':'PART_CLASS',
+        'Make': 'MAKE',
+        'Model': 'MODEL'
     }
     with open(f'./apiobject/lookup/fields.py', 'w') as f:
         f.write('from .lookup import ValueID\n\n')
@@ -28,13 +32,32 @@ if __name__ == '__main__':
             for value_id in value_id_mappings:
                 value = value_id['value']
                 id = value_id['id']
-                f.write(f'\t{value.upper().replace(" ", "_")} = ValueID(\'{value}\', {id})\n')
+                f.write(f'\t{(re.sub(">|-| ", "_", value_id["value"]).upper())} = ValueID(\'{value}\', {id})\n')
             f.write(f'\n\n')
-        for field, field_key  in field_detail_key_mapping.items():
+
+        for field, field_key in field_detail_key_mapping.items():
             f.write(f'class {field}:\n')
             value_id_mappings = lookupObject.field_detail(field_detail_key_mapping[field])
             for value_id in value_id_mappings:
                 value = value_id['value']
                 id = value_id['id']
-                f.write(f'\t{value.upper().replace(" ", "_")} = ValueID(\'{value}\', {id})\n')
+                if value 
+                f.write(f'\t{(re.sub(">|-| ", "_", value_id["value"]).upper())} = ValueID(\'{value}\', {id})\n')
             f.write(f'\n\n')
+
+    subtab_key_mapping = {
+        'Custom Fields': ['Part','PartModel']
+    }
+
+    subtab = lookupObject.subtab_detail()
+    with open(f'./apiobject/lookup/subtabs.py', 'w') as f:
+        f.write('from .lookup import ValueID\n\n')
+        f.write(f'class Subtabs:\n')
+        for i in range(len(subtab)):
+            for subtabName, subtabType in subtab_key_mapping.items():
+                for j in range(2):
+                    if (subtab[i]["tiSubtabName"] == subtabName) & (subtab[i]["tiSubtabType"]["value"] == subtabType[j]):
+                        subtabName = re.sub('>|-| ', '_', subtab[i]["tiSubtabName"])
+                        subtabType = subtab[i]["tiSubtabType"]["value"]
+                        subtabId = subtab[i]["subtabId"]
+                        f.write(f'\t{subtabName.upper().replace(" ", "_")}_{subtabType.upper().replace(" ", "_")} = ValueID(\'{subtabType}\', {subtabId})\n')

@@ -166,3 +166,38 @@ class CustomField(Resource):
             "chkApplyToModel": applyToModels
         }
         resp = self.user.http.request('POST', '/settings/lists/customFields', json=payload).json()
+        self.id = resp['listContent']['contentDetailId']
+        return resp
+
+    def delete(self):        
+        payload = {
+            "method": "delete",
+            "ids": [
+                self.id
+            ]
+        }
+        resp = self.user.http.request('POST', '/settings/lists/customFields/bulk', json=payload).json()
+
+
+class Panel(Resource):
+    def __init__(self, user: User) -> None:
+        super().__init__()
+        self.user = user
+    
+    def create(self, subtab, name):
+        payload = {
+            "subtabId": subtab.id,
+            "panels": [{            
+                "panelName": name,
+                "column": 0,
+                "row": 0,
+                "height": 3,
+                "width": 2}]
+        }
+
+        resp = self.user.http.request('POST', '/settings/lists/subtabs/panel', json=payload).json()
+        self.id = resp['panels'][0]['panelId']
+        return resp
+
+    def delete(self):
+        resp = self.user.http.request('DELETE', '/settings/lists/subtabs/panel/%s' % self.id)

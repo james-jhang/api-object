@@ -45,6 +45,7 @@ class User:
             },
             cookies=res_login_form.cookies
         )
+        
 
 class Administrator(User):
     def __init__(self, host, username, password):

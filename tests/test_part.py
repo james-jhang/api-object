@@ -1,6 +1,7 @@
 import pytest
 
 from apiobject.lookup.fields import *
+from apiobject.lookup.subtabs import *
 from apiobject.part.part import *
 from apiobject.user.user import Administrator
 
@@ -98,5 +99,15 @@ class TestPart:
         part_custom_field.create('Test Custom Field', 'Part', PartClassField.DAUGHTER_BOARD, CustomFieldDataType.TEXT, True)
 
         # teardown
-        
+        part_custom_field.delete()
+        parts_management.disable_parts_management()
+    
+    def test_part_subtab(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        panel = Panel(user=admin)
+        panel.create(Subtabs.CUSTOM_FIELDS_PART, 'Test Panel')
+
+        # teardown
+        panel.delete()
         parts_management.disable_parts_management()
