@@ -1,5 +1,6 @@
 import pytest
 
+from apiobject.lookup.modelFields import *
 from apiobject.lookup.fields import *
 from apiobject.lookup.subtabs import *
 from apiobject.part.part import *

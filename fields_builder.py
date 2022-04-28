@@ -22,7 +22,6 @@ if __name__ == '__main__':
         'Location': 'LOCATION',
         'PartClass':'PART_CLASS',
         'Make': 'MAKE',
-        'Model': 'MODEL'
     }
     with open(f'./apiobject/lookup/fields.py', 'w') as f:
         f.write('from .lookup import ValueID\n\n')
@@ -41,8 +40,32 @@ if __name__ == '__main__':
             for value_id in value_id_mappings:
                 value = value_id['value']
                 id = value_id['id']
-                if value 
-                f.write(f'\t{(re.sub(">|-| ", "_", value_id["value"]).upper())} = ValueID(\'{value}\', {id})\n')
+                if re.match('^[0-9]', value):
+                    resultValue = "_" + str(value)
+                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", "_", resultValue).upper())
+                else:
+                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", value).upper())
+                f.write(f'\t{resultValue} = ValueID(\'{value}\', {id})\n')
+            f.write(f'\n\n')
+    
+    model_key = {
+        'Model': 'MODEL'
+    }
+
+    with open(f'./apiobject/lookup/modelFields.py', 'w') as f:
+        f.write('from .lookup import ValueID\n\n')
+        for field, field_key in model_key.items():
+            f.write(f'class {field}:\n')
+            value_id_mappings = lookupObject.field_detail(model_key[field])
+            for value_id in value_id_mappings:
+                value = value_id['value']
+                id = value_id['id']
+                if re.match('^[0-9]', value):
+                    resultValue = "_" + str(value)
+                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", resultValue).upper())
+                else:
+                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", value).upper())
+                f.write(f'\t{resultValue} = ValueID(\'{value}\', {id})\n')
             f.write(f'\n\n')
 
     subtab_key_mapping = {
