@@ -18,10 +18,8 @@ class Item(Resource):
         self.location = None
     
     def get_item_ports_info(self, modelId):
-        resp = self.user.http.request('GET', '/items/details/empty/%s' % modelId, json=payload).json()
-        if resp.status_code != 200:
-            raise Exception('Can not get item ports info: %s' % resp.content.decode('utf-8'))
-        return resp.json()['item']
+        resp = self.user.http.request('GET', '/items/details/empty/%s' % modelId).json()
+        return resp['item']
 
     def get_port_info(self, port_info):
         ports = port_info['value']
@@ -31,8 +29,7 @@ class Item(Resource):
         return ports
 
     def total_fields(self, match=None):
-        resp = self.user.http.request('GET', '/items/itemListFields', json=payload).json()
-        totalFields = json.loads(resp.content.decode('utf-8'))
+        totalFields = self.user.http.request('GET', '/quicksearch/items/itemListFields').json()
         if callable(match):
             return [field for field in totalFields if match(field)]
         else:
@@ -56,8 +53,6 @@ class Item(Resource):
             "customFields": []
         }
 
-        self.id = resp['id']
-
         fields_info = self.total_fields()
         for column, value in payload.items():
             for field_info in fields_info:
@@ -67,6 +62,9 @@ class Item(Resource):
                     })
                     break
 
-        resp = self.user.http.request('POST','/items/-1',
-            headers={'Content-Type': 'application/json'}, data=json.dumps(itemData)
-        )
+        resp = self.user.http.request('POST','/items/-1', json=itemData).json()
+        self.id = resp
+    
+    def delete(self):
+        payload = [self.id]
+        resp = self.user.http.request('POST','/items/delete/false', json=payload).json()
