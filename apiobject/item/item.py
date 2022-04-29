@@ -4,7 +4,6 @@ from apiobject.lookup.modelFields import *
 
 from ..resource import Resource
 from ..user.user import User
-from ..part.part import Part
 import json
 
 class Item(Resource):

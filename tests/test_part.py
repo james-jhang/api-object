@@ -1,9 +1,11 @@
+import re
 import pytest
 
 from apiobject.lookup.modelFields import *
 from apiobject.lookup.fields import *
 from apiobject.lookup.subtabs import *
 from apiobject.part.part import *
+from apiobject.item.item import *
 from apiobject.user.user import Administrator
 
 @pytest.fixture
@@ -14,7 +16,6 @@ def admin():
     yield admin
 
 class TestPart:
-
     def test_part_class(self, admin):
         parts_management = PartsManagement(user=admin)
         parts_management.enable_parts_management()
@@ -112,3 +113,27 @@ class TestPart:
         # teardown
         panel.delete()
         parts_management.disable_parts_management()
+
+    def test_part_assign_item(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        part_class = PartClass(user=admin)
+        part_class.get("CPU")
+        part_model = PartModel(user=admin)
+        part_model.create(part_class, '3Com', 'Test Part Model', 'TEST_456', SoltType.CPU_SOCKET)
+        
+        part = Part(user=admin)
+        part.create(
+            part_model, '911 Enable', 'Test Part', PartStatus.IN_STOCK, Location.SITE_A, TrackingType.COLLECTIVELY, 
+            8, 2, 7
+        )
+        item = Item(user=admin)
+        item.create(item_name='Test Item', make=Make.HP, model=Model.BLADE_SYSTEM_C7000, status=ItemStatus.PLANNED, location=Location.SITE_A)
+        part.assign_to_item(item, quantity='1', reason='reason', tracking_number='123')
+
+        #teardown
+        part.unassign_from_item(item)
+        item.delete()
+        part.delete()
+        part_model.delete()
+        parts_management.enable_parts_management()

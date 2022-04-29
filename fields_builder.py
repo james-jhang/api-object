@@ -22,6 +22,7 @@ if __name__ == '__main__':
         'Location': 'LOCATION',
         'PartClass':'PART_CLASS',
         'Make': 'MAKE',
+        'ProjectNumber': 'PROJECT_NUMBER'
     }
     with open(f'./apiobject/lookup/fields.py', 'w') as f:
         f.write('from .lookup import ValueID\n\n')
@@ -31,7 +32,8 @@ if __name__ == '__main__':
             for value_id in value_id_mappings:
                 value = value_id['value']
                 id = value_id['id']
-                f.write(f'\t{(re.sub(">|-| ", "_", value_id["value"]).upper())} = ValueID(\'{value}\', {id})\n')
+                resultValue = (re.sub("\>|-|\.| ", "_", value_id["value"]).upper())
+                f.write(f'\t{resultValue} = ValueID(\'{value}\', {id})\n')
             f.write(f'\n\n')
 
         for field, field_key in field_detail_key_mapping.items():
@@ -42,7 +44,7 @@ if __name__ == '__main__':
                 id = value_id['id']
                 if re.match('^[0-9]', value):
                     resultValue = "_" + str(value)
-                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", "_", resultValue).upper())
+                    resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", resultValue).upper())
                 else:
                     resultValue = (re.sub("/|\.|\(|\)|-|\+|\,|\&|\=|\*|\^|#| ", "_", value).upper())
                 f.write(f'\t{resultValue} = ValueID(\'{value}\', {id})\n')

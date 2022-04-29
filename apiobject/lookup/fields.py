@@ -57,7 +57,7 @@ class ItemStatus:
 	INSTALLED = ValueID('Installed', 5082)
 	OFF_SITE = ValueID('Off-Site', 5084)
 	PLANNED = ValueID('Planned', 5081)
-	PLANNED_DECOMM = ValueID('Planned Decomm.', 5092)
+	PLANNED_DECOMM_ = ValueID('Planned Decomm.', 5092)
 	POWERED_OFF = ValueID('Powered-off', 5083)
 	STORAGE = ValueID('Storage', 5088)
 
@@ -635,5 +635,14 @@ class Make:
 	XIOTECH = ValueID('Xiotech', 302)
 	ZPE_SYSTEMS = ValueID('ZPE Systems', 545)
 	ZYXEL = ValueID('Zyxel', 303)
+
+
+class ProjectNumber:
+	DCTRACK_3_0_GA386 = ValueID('dcTrack 3.0 GA386', 1)
+	DGS_PROJ1 = ValueID('DGS-PROJ1', 2)
+	RN2011_0001 = ValueID('RN2011-0001', 3)
+	RN2011_0002 = ValueID('RN2011-0002', 4)
+	RN2012_0001 = ValueID('RN2012-0001', 5)
+	RN2014_0001 = ValueID('RN2014-0001', 6)
 
 
