@@ -1,0 +1,18 @@
+{
+    "id": 2558,
+    "label": "Test",
+    "assignableTo": {
+        "id": 93201,
+        "value": "Item"
+    },
+    "classesForAssociation": [
+        {
+            "id": 1100,
+            "value": "Cabinet"
+        },
+        {
+            "id": 3500,
+            "value": "HVAC"
+        }
+    ]
+}
