@@ -12,7 +12,17 @@ class ModelDAO(DAO):
         # url = '/models/modelList?pageNumber=1&pageSize=100'
         url = '/models/modelList?pageNumber=1&pageSize=999999'
         # TODO refine the payload
-        payload = {"columns":[{"name":"cmbModel","sortOrder":"1","sortType":"asc"}]}
+        payload = {
+            "columns": [
+                {
+                    "name":"cmbModel",
+                    "filter": {"contains": name},
+                    "displayValue": name
+                }
+            ],
+            "selectedColumns": [],
+            "timeZone": ""
+        }
         models = self.user.http.request('POST', url, prefix='/dcTrackApp/api/v1', json=payload).json()['models']
         for model in models:
             r_model = ModelConterver.to_resource(model)
