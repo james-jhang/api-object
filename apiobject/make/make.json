@@ -1,0 +1,29 @@
+{
+    "mfrId": 302,
+    "cmbMake": {
+        "label": "Name",
+        "value": "Xiotech",
+        "editable": null
+    },
+    "tiTelCustService": {
+        "label": "Customer Service",
+        "value": null,
+        "editable": null
+    },
+    "tiTelTechSupport": {
+        "label": "Technical Support",
+        "value": null,
+        "editable": null
+    },
+    "tiAccountNumber": {
+        "label": "Account Number",
+        "value": null,
+        "editable": null
+    },
+    "tiNotes": {
+        "label": "Notes",
+        "value": null,
+        "editable": null
+    },
+    "tabMfrAliases": []
+}

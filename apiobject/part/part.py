@@ -19,9 +19,9 @@ class PartsManagement:
 
 
 class PartClass(Resource):
-    def __init__(self, user: User, id=None) -> None:
+    def __init__(self, id, user: User) -> None:
+        super().__init__(id)
         self.user = user
-        self.id = None
         self.label = None
         self.assignableTo = None
         self.classesForAssociation = None
@@ -63,8 +63,8 @@ class Image:
 
 
 class PartModel(Resource):
-    def __init__(self, user: User) -> None:
-        super().__init__()
+    def __init__(self, id, user: User) -> None:
+        super().__init__(id)
         self.user = user
 
     def create(self,
@@ -123,8 +123,8 @@ class PartModel(Resource):
 
 
 class Part(Resource):
-    def __init__(self, user: User) -> None:
-        super().__init__()
+    def __init__(self, id, user: User) -> None:
+        super().__init__(id)
         self.user = user
 
     def create(self,
@@ -145,11 +145,11 @@ class Part(Resource):
         }
         for uiComponentId, value in payload.items():
             part_payload.update({uiComponentId:{"value":value}})
-        
+
         resp = self.user.http.request('POST', '/parts', json=part_payload).json()
         self.id = resp['partId']
         return resp
-    
+
     def delete(self):
         payload = {'parts':[{'partId': self.id}]}
         resp = self.user.http.request('PUT', '/parts/bulk/delete', json=payload).json()
@@ -170,7 +170,7 @@ class Part(Resource):
     def unassign_from_item(self, item: Item):
         payload = {
             "partItemAssignmentIds": self.partItemAssignmentIds,
-            "isDeletePorts": False, 
+            "isDeletePorts": False,
             "reason": ""
         }
         resp = self.user.http.request('POST', '/parts/assignments/items/deletes', json=payload).json()
@@ -197,8 +197,8 @@ class Part(Resource):
 
 
 class CustomField(Resource):
-    def __init__(self, user: User) -> None:
-        super().__init__()
+    def __init__(self, id, user: User) -> None:
+        super().__init__(id)
         self.user = user
 
     def create(self, name:str, appliesTo:str, classes:PartClassField, fieldType:CustomFieldDataType, applyToModels=None):
@@ -215,7 +215,7 @@ class CustomField(Resource):
         self.id = resp['listContent']['contentDetailId']
         return resp
 
-    def delete(self):        
+    def delete(self):
         payload = {
             "method": "delete",
             "ids": [
@@ -226,14 +226,14 @@ class CustomField(Resource):
 
 
 class Panel(Resource):
-    def __init__(self, user: User) -> None:
-        super().__init__()
+    def __init__(self, id, user: User) -> None:
+        super().__init__(id)
         self.user = user
-    
+
     def create(self, subtab, name):
         payload = {
             "subtabId": subtab.id,
-            "panels": [{            
+            "panels": [{
                 "panelName": name,
                 "column": 0,
                 "row": 0,

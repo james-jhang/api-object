@@ -1,2 +1,5 @@
+from apiobject.user import User
+
 class DAO:
-    pass
+    def __init__(self, user: User) -> None:
+        self.user = user

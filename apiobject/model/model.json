@@ -1,0 +1,354 @@
+{
+    "tiDaughterBoardSlots": {
+        "label": "Daughter Board Slots",
+        "value": null,
+        "editable": null
+    },
+    "tiDiskBays": {
+        "label": "Disk Bays",
+        "value": null,
+        "editable": null
+    },
+    "tiPowerSupplySlots": {
+        "label": "Power Supply Slots",
+        "value": null,
+        "editable": null
+    },
+    "tiCassetteSlots": {
+        "label": "Cassette Slots",
+        "value": null,
+        "editable": null
+    },
+    "tiCpuType": {
+        "label": "CPU Type",
+        "value": null,
+        "editable": null
+    },
+    "tiCpuQty": {
+        "label": "CPU Quantity",
+        "value": null,
+        "editable": null
+    },
+    "tiRamGB": {
+        "label": "RAM (GB)",
+        "value": null,
+        "editable": null
+    },
+    "tiPolesQty": {
+        "label": "Number of Poles",
+        "value": null,
+        "editable": null
+    },
+    "tiCapacity1": {
+        "label": "Capacity 1 (AH)",
+        "value": null,
+        "editable": null
+    },
+    "tiCapacity2": {
+        "label": "Capacity 2 (AH)",
+        "value": null,
+        "editable": null
+    },
+    "tiAh1RateHours": {
+        "label": "Capacity 1 Rate (Hours)",
+        "value": null,
+        "editable": null
+    },
+    "tiAh2RateHours": {
+        "label": "Capacity 2 Rate (Hours)",
+        "value": null,
+        "editable": null
+    },
+    "tiPanelsQty": {
+        "label": "Max Panels",
+        "value": null,
+        "editable": null
+    },
+    "tiPhase": {
+        "label": "Output Wiring",
+        "value": null,
+        "editable": null
+    },
+    "tiMaxAmps": {
+        "label": "Max Amps",
+        "value": null,
+        "editable": null
+    },
+    "tiMainBreaker": {
+        "label": "Main Breaker (A)",
+        "value": null,
+        "editable": null
+    },
+    "tiOutputCapacity": {
+        "label": "Output Capacity (A)",
+        "value": null,
+        "editable": null
+    },
+    "tiRatingKW": {
+        "label": "Rating (kW)",
+        "value": null,
+        "editable": null
+    },
+    "tiCapacityKW": {
+        "label": "Capacity (kW)",
+        "value": null,
+        "editable": null
+    },
+    "tiOutputVAC": {
+        "label": "Output (Vac)",
+        "value": null,
+        "editable": null
+    },
+    "tiNominalVoltage": {
+        "label": "Nominal Voltage",
+        "value": null,
+        "editable": null
+    },
+    "tiOutputVoltageVDC": {
+        "label": "Output Voltage (Vdc)",
+        "value": null,
+        "editable": null
+    },
+    "tiRatingTons": {
+        "label": "Capacity (Tons)",
+        "value": null,
+        "editable": null
+    },
+    "tiRatingKva": {
+        "label": "Rating (kVA)",
+        "value": null,
+        "editable": null
+    },
+    "tiDiskGB": {
+        "label": "Disk (GB)",
+        "value": null,
+        "editable": null
+    },
+    "tiCellQty": {
+        "label": "Number of Cells",
+        "value": null,
+        "editable": null
+    },
+    "tiDischargeVPC": {
+        "label": "Discharge VPC",
+        "value": null,
+        "editable": null
+    },
+    "tiDatasheet": {
+        "label": "Datasheet",
+        "value": null,
+        "editable": null
+    },
+    "modelId": 27963,
+    "cmbModel": {
+        "label": "Model Name",
+        "value": "00FW789",
+        "editable": null
+    },
+    "cmbMake": {
+        "label": "Make",
+        "value": "IBM",
+        "editable": null
+    },
+    "tiStatus": {
+        "label": "Status",
+        "value": "Active",
+        "editable": null
+    },
+    "tiIsArchived": {
+        "label": "Is Archived",
+        "value": false,
+        "editable": null
+    },
+    "tiClass": {
+        "label": "Class",
+        "value": "Rack PDU",
+        "editable": null
+    },
+    "tiSubclass": {
+        "label": "Subclass",
+        "value": "AC Power",
+        "editable": null
+    },
+    "tiFormFactor": {
+        "label": "Form Factor",
+        "value": "Fixed",
+        "editable": null
+    },
+    "tiMounting": {
+        "label": "Mounting",
+        "value": "ZeroU",
+        "editable": null
+    },
+    "tiRuHeight": {
+        "label": "Height (RUs)",
+        "value": 11,
+        "editable": null
+    },
+    "tiDimHeight": {
+        "label": "Height",
+        "value": 19.25,
+        "editable": null
+    },
+    "tiDimWidth": {
+        "label": "Width",
+        "value": 1.25,
+        "editable": null
+    },
+    "tiDimDepth": {
+        "label": "Depth",
+        "value": 12.0,
+        "editable": null
+    },
+    "tiWeight": {
+        "label": "Weight",
+        "value": 10.0,
+        "editable": null
+    },
+    "tiStandard": {
+        "label": "My Company Standard",
+        "value": false,
+        "editable": null
+    },
+    "tiModelInUse": {
+        "label": "Models In Use",
+        "value": 0,
+        "editable": null
+    },
+    "tiCustomModel": {
+        "label": "Origin",
+        "value": "Sunbird",
+        "editable": null
+    },
+    "tiFrontSlotsCount": {
+        "label": "Chassis Slot Count Front",
+        "value": 0,
+        "editable": null
+    },
+    "tiRearSlotsCount": {
+        "label": "Chassis Slot Count Back",
+        "value": 0,
+        "editable": null
+    },
+    "tiDataPortsCount": {
+        "label": "Data Ports Count",
+        "value": 0,
+        "editable": null
+    },
+    "tiPowerPortsCount": {
+        "label": "Power Ports Count",
+        "value": 0,
+        "editable": null
+    },
+    "tiFrontImage": {
+        "label": "Front Image",
+        "value": "No",
+        "editable": null
+    },
+    "tiRearImage": {
+        "label": "Rear Image",
+        "value": "No",
+        "editable": null
+    },
+    "tiLibraryVersion": {
+        "label": "Version (read-only)",
+        "value": "3.055",
+        "editable": null
+    },
+    "tiDontUpgrade": {
+        "label": "Do Not Update",
+        "value": false,
+        "editable": null
+    },
+    "tabDataPorts": [],
+    "tabPowerPorts": [],
+    "tabChassisSlots": [],
+    "tabModelAliases": [],
+    "tiPSRedundancy": {
+        "label": "Redundancy",
+        "value": null,
+        "editable": null
+    },
+    "tiNotes": {
+        "label": "Notes",
+        "value": null,
+        "editable": null
+    },
+    "cmbPolicy": {
+        "label": "Policy",
+        "value": null,
+        "editable": null
+    },
+    "tiModelOriginalPower": {
+        "label": "Original Power",
+        "value": 0.0,
+        "editable": null
+    },
+    "chkModelAutoPowerBudget": {
+        "label": "Auto Power Budget",
+        "value": false,
+        "editable": null
+    },
+    "tiModelBudgetStatus": {
+        "label": "Budget Status",
+        "value": null,
+        "editable": null
+    },
+    "createDate": 1418901479000,
+    "dtCreateDate": {
+        "label": "Create Date",
+        "value": "2014-12-18 06:17:59-05",
+        "editable": null
+    },
+    "updateDate": 1645458663000,
+    "dtUpdateDate": {
+        "label": "Update Date",
+        "value": "2022-02-21 10:51:03-05",
+        "editable": null
+    },
+    "tiCpuSockets": {
+        "label": "CPU Sockets",
+        "value": null,
+        "editable": null
+    },
+    "tiRamSlots": {
+        "label": "RAM Slots",
+        "value": null,
+        "editable": null
+    },
+    "tiPotentialPower": {
+        "label": "Potential Power",
+        "value": 0.0,
+        "editable": null
+    },
+    "tiModelAliases": {
+        "label": "Model Aliases",
+        "value": null,
+        "editable": null
+    },
+    "tiMfrAliases": {
+        "label": "Manufacturer Aliases",
+        "value": null,
+        "editable": null
+    },
+    "tiAirflowRate": {
+        "label": "Airflow Rate",
+        "value": null,
+        "editable": null
+    },
+    "tiCompensationFactor": {
+        "label": "Compensation Factor",
+        "value": null,
+        "editable": null
+    },
+    "tiExpansionSlots": {
+        "label": "Expansion Slots",
+        "value": null,
+        "editable": null
+    },
+    "tiAirFlow": {
+        "label": "Air Flow",
+        "value": null,
+        "editable": null
+    }
+}

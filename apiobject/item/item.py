@@ -1,15 +1,15 @@
-from typing import List
+# from typing import List
 
 from apiobject.lookup.modelFields import *
 
 from ..resource import Resource
-from ..user.user import User
-import json
+# from ..user.user import User
+# import json
 
 class Item(Resource):
     def __init__(self, id, make, model, name, location) -> None:
+        super().__init__(id)
         # self.user = user
-        self.id = id
         self.name = name
         self.make = make
         self.model = model
@@ -66,7 +66,7 @@ class Item(Resource):
 
     #     resp = self.user.http.request('POST','/items/-1', json=itemData).json()
     #     self.id = resp
-    
-    def delete(self):
-        payload = [self.id]
-        resp = self.user.http.request('POST','/items/delete/false', json=payload).json()
+
+    # def delete(self):
+    #     payload = [self.id]
+    #     resp = self.user.http.request('POST','/items/delete/false', json=payload).json()

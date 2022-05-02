@@ -1,0 +1,78 @@
+{
+    "locationId": 41,
+    "localeId": 36,
+    "tiLocationCode": {
+        "label": "Full Code Path",
+        "value": "ACDC"
+    },
+    "tiLocationName": {
+        "label": "Name",
+        "value": "ACDC"
+    },
+    "cmbHierarchyLevel": {
+        "label": "Level in Hierarchy",
+        "value": {
+            "id": 5011,
+            "value": "Data Center"
+        }
+    },
+    "cmbLocationEdmParent": {
+        "label": "Parent",
+        "value": {}
+    },
+    "chkContainsAssets": {
+        "label": "Can Contain Assets",
+        "value": true,
+        "editable": true
+    },
+    "tiLocationArea": {
+        "label": "Area (sq.ft.)",
+        "value": 1000
+    },
+    "tiPiqId": {
+        "label": "Power IQ Object ID",
+        "value": null
+    },
+    "cmbAddressCountry": {
+        "label": "Country",
+        "value": {
+            "id": 2254,
+            "value": "United States"
+        },
+        "editable": true
+    },
+    "cmbPiqHost": {
+        "label": "Power IQ Association",
+        "value": {}
+    },
+    "cmbVirtualizationEndpoint": {
+        "label": "VM Manager",
+        "value": []
+    },
+    "chkEnableVPC": {
+        "label": "Virtual Power Chain",
+        "value": true,
+        "editable": true
+    },
+    "chkDefaultSite": {
+        "label": "System Default Location",
+        "value": false,
+        "editable": true
+    },
+    "tiNotes": {
+        "label": "Notes",
+        "value": null
+    },
+    "cmbLocationType": {
+        "label": "Location Type",
+        "value": {}
+    },
+    "cmbAddressState": {
+        "label": "State",
+        "value": {}
+    },
+    "tiOwnerName": {
+        "label": "Owner",
+        "value": null
+    }
+}
