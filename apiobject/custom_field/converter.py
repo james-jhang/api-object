@@ -1,7 +1,7 @@
 from apiobject.converter import Converter
 
 from .custom_field import CustomField
-
+from .panel import Panel
 
 class CustomFieldConverter(Converter[CustomField]):
     @staticmethod
@@ -21,3 +21,23 @@ class CustomFieldConverter(Converter[CustomField]):
         )
         custom_field.apply_to_models = payload['chkApplyToModel']
         return custom_field
+
+class PanelConverter(Converter[Panel]):
+    @staticmethod
+    def to_payload(resource: Panel):
+        raise NotImplementedError
+
+    @staticmethod
+    def to_resource(payload) -> Panel:
+        panel_payload = payload['panels'][0]
+        panel = Panel(
+            panel_payload['panelId'],
+            payload['subtabId'],
+            panel_payload['panelName'],
+            panel_payload['width'],
+            panel_payload['height']
+        )
+        panel.row = panel_payload['row']
+        panel.column = panel_payload['column']
+        return panel
+

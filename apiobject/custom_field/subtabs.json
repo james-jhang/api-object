@@ -1,0 +1,988 @@
+[
+    {
+        "subtabId": 22,
+        "tiSubtabName": "Power Tap Boxes",
+        "tiSortOrder": 1,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 12,
+        "tiSubtabName": "Power Breakers",
+        "tiSortOrder": 2,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 2,
+        "tiSubtabName": "Asset and Maintenance",
+        "tiSortOrder": 4,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 2500,
+                "value": "Battery"
+            },
+            {
+                "id": 2600,
+                "value": "AC Distribution"
+            },
+            {
+                "id": 2700,
+                "value": "Power Source"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 28,
+        "tiSubtabName": "Relationships",
+        "tiSortOrder": 5,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 2450,
+                "value": "UPS Bank"
+            },
+            {
+                "id": 2500,
+                "value": "Battery"
+            },
+            {
+                "id": 2600,
+                "value": "AC Distribution"
+            },
+            {
+                "id": 2700,
+                "value": "Power Source"
+            },
+            {
+                "id": 3100,
+                "value": "Perforated Tiles"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 4100,
+                "value": "Passive"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 3,
+        "tiSubtabName": "Configuration",
+        "tiSortOrder": 6,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 2500,
+                "value": "Battery"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 4,
+        "tiSubtabName": "Items in Cabinet",
+        "tiSortOrder": 7,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 5,
+        "tiSubtabName": "Blades",
+        "tiSortOrder": 8,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 6,
+        "tiSubtabName": "Data Ports",
+        "tiSortOrder": 9,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 7,
+        "tiSubtabName": "Power Ports",
+        "tiSortOrder": 10,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 8,
+        "tiSubtabName": "Power Supply Ports",
+        "tiSortOrder": 11,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 10,
+        "tiSubtabName": "Sensors Ports",
+        "tiSortOrder": 12,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 11,
+        "tiSubtabName": "SNMP Settings",
+        "tiSortOrder": 13,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 17,
+        "tiSubtabName": "Rectifiers",
+        "tiSortOrder": 14,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 18,
+        "tiSubtabName": "Batteries",
+        "tiSortOrder": 15,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 13,
+        "tiSubtabName": "Power Panels",
+        "tiSortOrder": 16,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            },
+            {
+                "id": 5100,
+                "value": "DC Distribution"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 14,
+        "tiSubtabName": "Audit Trail",
+        "tiSortOrder": 18,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 2500,
+                "value": "Battery"
+            },
+            {
+                "id": 2600,
+                "value": "AC Distribution"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 15,
+        "tiSubtabName": "External Ticket",
+        "tiSortOrder": 19,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            },
+            {
+                "id": 2500,
+                "value": "Battery"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            },
+            {
+                "id": 5000,
+                "value": "DC Power System"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 26,
+        "tiSubtabName": "Configuration",
+        "tiSortOrder": 26,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 3500,
+                "value": "HVAC"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4402,
+            "value": "Part"
+        }
+    },
+    {
+        "subtabId": 29,
+        "tiSubtabName": "Items",
+        "tiSortOrder": 28,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 30,
+        "tiSubtabName": "Circuits",
+        "tiSortOrder": 29,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 31,
+        "tiSubtabName": "Requests",
+        "tiSortOrder": 30,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 32,
+        "tiSubtabName": "Work Orders",
+        "tiSortOrder": 31,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 33,
+        "tiSubtabName": "Relationships",
+        "tiSortOrder": 32,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 34,
+        "tiSubtabName": "Audit Trail",
+        "tiSortOrder": 33,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 6000,
+                "value": "Project"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 36,
+        "tiSubtabName": "Items",
+        "tiSortOrder": 35,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 7000,
+                "value": "Ticket"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4405,
+            "value": "Ticket"
+        }
+    },
+    {
+        "subtabId": 37,
+        "tiSubtabName": "Circuits",
+        "tiSortOrder": 36,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 7000,
+                "value": "Ticket"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4405,
+            "value": "Ticket"
+        }
+    },
+    {
+        "subtabId": 38,
+        "tiSubtabName": "Relationships",
+        "tiSortOrder": 37,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 7000,
+                "value": "Ticket"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4405,
+            "value": "Ticket"
+        }
+    },
+    {
+        "subtabId": 19,
+        "tiSubtabName": "Parts",
+        "tiSortOrder": 17,
+        "chkIsStandard": true,
+        "subtabClass": [
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            }
+        ],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 16,
+        "tiSubtabName": "Circuit Detail",
+        "tiSortOrder": 20,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4401,
+            "value": "Circuit"
+        }
+    },
+    {
+        "subtabId": 1,
+        "tiSubtabName": "Custom Fields",
+        "tiSortOrder": 3,
+        "chkIsStandard": false,
+        "subtabClass": [
+            {
+                "id": 1200,
+                "value": "Device"
+            },
+            {
+                "id": 1300,
+                "value": "Network"
+            },
+            {
+                "id": 1500,
+                "value": "Data Panel"
+            },
+            {
+                "id": 2200,
+                "value": "Power Outlet"
+            },
+            {
+                "id": 2100,
+                "value": "Rack PDU"
+            },
+            {
+                "id": 1100,
+                "value": "Cabinet"
+            },
+            {
+                "id": 1400,
+                "value": "Probe"
+            },
+            {
+                "id": 2300,
+                "value": "Floor PDU"
+            },
+            {
+                "id": 2400,
+                "value": "UPS"
+            }
+        ],
+        "subtabSubclass": [
+            {
+                "id": 3502,
+                "value": "Cooling Unit"
+            }
+        ],
+        "tiSubtabType": {
+            "id": 4400,
+            "value": "Item"
+        }
+    },
+    {
+        "subtabId": 35,
+        "tiSubtabName": "Custom Fields",
+        "tiSortOrder": 34,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4405,
+            "value": "Ticket"
+        }
+    },
+    {
+        "subtabId": 23,
+        "tiSubtabName": "Custom Fields",
+        "tiSortOrder": 23,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 24,
+        "tiSubtabName": "Contacts",
+        "tiSortOrder": 24,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4404,
+            "value": "Project"
+        }
+    },
+    {
+        "subtabId": 20,
+        "tiSubtabName": "Custom Fields",
+        "tiSortOrder": 21,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4402,
+            "value": "Part"
+        }
+    },
+    {
+        "subtabId": 21,
+        "tiSubtabName": "Custom Fields",
+        "tiSortOrder": 22,
+        "chkIsStandard": false,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4403,
+            "value": "PartModel"
+        }
+    },
+    {
+        "subtabId": 25,
+        "tiSubtabName": "Assignments",
+        "tiSortOrder": 25,
+        "chkIsStandard": true,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4402,
+            "value": "Part"
+        }
+    },
+    {
+        "subtabId": 26,
+        "tiSubtabName": "Configuration",
+        "tiSortOrder": 26,
+        "chkIsStandard": true,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4402,
+            "value": "Part"
+        }
+    },
+    {
+        "subtabId": 27,
+        "tiSubtabName": "Maintenance",
+        "tiSortOrder": 27,
+        "chkIsStandard": true,
+        "subtabClass": [],
+        "subtabSubclass": [],
+        "tiSubtabType": {
+            "id": 4403,
+            "value": "PartModel"
+        }
+    }
+]

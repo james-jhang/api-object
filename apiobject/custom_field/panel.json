@@ -1,0 +1,19 @@
+{
+    "subtabId": 20,
+    "tiSortOrder": 0,
+    "chkIsStandard": false,
+    "subtabClass": [],
+    "subtabSubclass": [],
+    "panels": [
+        {
+            "panelId": 13,
+            "panelName": "New Panel",
+            "row": 0,
+            "column": 0,
+            "width": 2,
+            "height": 3,
+            "customFields": [],
+            "customFieldJSONs": []
+        }
+    ]
+}

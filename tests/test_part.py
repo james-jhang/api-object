@@ -146,7 +146,7 @@ class TestPart:
         parts_management = PartsManagement(user=admin)
         parts_management.enable_parts_management()
         custom_field_dao = CustomFieldDAO(user=admin)
-        custom_field = custom_field_dao.create(
+        custom_field = custom_field_dao.create_custom_field(
             label='Test Custom Field',
             appliesTo=[SubtabType.PART, SubtabType.ITEM],
             fieldType=CustomFieldDataType.TEXT,
@@ -165,18 +165,25 @@ class TestPart:
         assert custom_field.apply_to_models == True
 
         # teardown
-        custom_field_dao.delete(custom_field)
+        custom_field_dao.delete_custom_field(custom_field)
         parts_management.disable_parts_management()
 
-    # def test_part_subtab(self, admin):
-    #     parts_management = PartsManagement(user=admin)
-    #     parts_management.enable_parts_management()
-    #     panel = Panel(user=admin)
-    #     panel.create(Subtabs.CUSTOM_FIELDS_PART, 'Test Panel')
+    def test_part_subtab(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        custom_field_dao = CustomFieldDAO(user=admin)
+        panel = custom_field_dao.create_panel(
+            'Custom Fields',
+            'Part',
+            'Test Panel'
+        )
+        assert panel.name == 'Test Panel'
+        assert panel.width == 2
+        assert panel.height == 3
 
-    #     # teardown
-    #     panel.delete()
-    #     parts_management.disable_parts_management()
+        # # teardown
+        custom_field_dao.delete_panel(panel)
+        parts_management.disable_parts_management()
 
     # def test_part_assign_item(self, admin):
     #     parts_management = PartsManagement(user=admin)
