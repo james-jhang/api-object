@@ -63,6 +63,44 @@ class PartModelDAO(DAO):
         resp = self.user.http.request('POST', '/part_models', json=payload).json()
         return PartModelConverter.to_resource(resp)
 
+    def get(self, name):
+        url = '/part_models/list?pageNumber=1&pageSize=999999'
+        payload = {
+            "columns":[
+                {
+                    "name":"model",
+                    "filter":{"contains": name},
+                    "displayValue": name
+                }
+            ],
+            "selectedColumns":[
+                {"name":"partModelId"}, {"name":"partClass"},
+                {"name":"make"}, {"name":"model"},
+                {"name":"partNumber"}, {"name":"partModelDesc"},
+                {"name":"oemPartNumber"}, {"name":"dimH"},
+                {"name":"dimW"}, {"name":"dimD"},
+                {"name":"weight"}, {"name":"slotType"},
+                {"name":"partModelStatus"}, {"name":"upcSku"},
+                {"name":"notes"}, {"name":"madeIn"},
+                {"name":"warrantyPeriod"}, {"name":"usedCount"},
+                {"name":"partModelCreationDate"},
+                {"name":"partModelCreatedBy"},
+                {"name":"partModelUpdateDate"},
+                {"name":"partModelUpdatedBy"},
+                {"name":"itemId"}, {"name":"partId"}
+            ],
+            "timeZone":"GMT+8"
+        }
+        part_models = self.user.http.request('POST', url, json=payload).json()['partModels']
+        for part_model in part_models:
+            r_part_model = self.get_part_model(part_model['partModelId'])
+            if r_part_model.name == name:
+                return r_part_model
+
+    def get_part_model(self, id) -> PartModel:
+        resp = self.user.http.request('GET', f'/part_models/{id}').json()
+        return PartModelConverter.to_resource(resp)
+
     def delete(self, part_model: PartModel):
         payload = {'partModels':[{'partModelId': part_model.id}]}
         resp = self.user.http.request('PUT', '/part_models/bulk/delete', json=payload).json()

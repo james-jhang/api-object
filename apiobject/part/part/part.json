@@ -1,0 +1,229 @@
+{
+    "partModelId": 8,
+    "partClass": {
+        "id": 2564,
+        "code": null,
+        "value": "Test Part Class",
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "make": {
+        "id": 59,
+        "code": null,
+        "value": "3Com",
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "model": {
+        "id": 8,
+        "code": null,
+        "value": "Test Part",
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "partNumber": {
+        "id": null,
+        "code": null,
+        "value": "TEST_456",
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "partModelDesc": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "oemPartNumber": null,
+    "dimH": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "dimW": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "dimD": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "weight": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "slotType": {
+        "id": 1416,
+        "code": 93252,
+        "value": "CPU Socket",
+        "editable": false,
+        "hidden": false,
+        "required": false
+    },
+    "partModelStatus": null,
+    "upcSku": null,
+    "notes": null,
+    "madeIn": null,
+    "warrantyPeriod": null,
+    "imageIncluded": null,
+    "usedCount": null,
+    "partModelCreationDate": null,
+    "partModelCreatedBy": null,
+    "partModelUpdateDate": null,
+    "partModelUpdatedBy": null,
+    "partModelThresholdContacts": null,
+    "partModelCustomFields": [],
+    "imageUri": null,
+    "partId": 1,
+    "partModel": {
+        "id": 8,
+        "code": null,
+        "value": "Test Part",
+        "editable": true,
+        "hidden": true,
+        "required": true
+    },
+    "trackingType": {
+        "id": 1427,
+        "code": 93352,
+        "value": "Collectively",
+        "editable": true,
+        "hidden": false,
+        "required": true
+    },
+    "partDesc": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": true,
+        "hidden": false,
+        "required": false
+    },
+    "countInStock": {
+        "id": null,
+        "code": null,
+        "value": 6,
+        "editable": false,
+        "hidden": false,
+        "required": true
+    },
+    "countInUse": {
+        "id": null,
+        "code": null,
+        "value": 12,
+        "editable": false,
+        "hidden": false,
+        "required": true
+    },
+    "threshold": {
+        "id": null,
+        "code": null,
+        "value": 0,
+        "editable": true,
+        "hidden": false,
+        "required": true
+    },
+    "partStatus": {
+        "id": 2463,
+        "code": null,
+        "value": "In Stock",
+        "editable": true,
+        "hidden": false,
+        "required": true
+    },
+    "location": {
+        "id": 1,
+        "code": null,
+        "value": "SITE A",
+        "editable": true,
+        "hidden": false,
+        "required": true
+    },
+    "locationReference": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": true,
+        "hidden": false,
+        "required": false
+    },
+    "serialNumber": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": true,
+        "hidden": false,
+        "required": false
+    },
+    "creationDate": {
+        "id": null,
+        "code": null,
+        "value": 1651550808,
+        "editable": false,
+        "hidden": true,
+        "required": false
+    },
+    "createdBy": {
+        "id": null,
+        "code": null,
+        "value": "admin",
+        "editable": false,
+        "hidden": true,
+        "required": false
+    },
+    "updateDate": {
+        "id": null,
+        "code": null,
+        "value": 1651550808,
+        "editable": false,
+        "hidden": true,
+        "required": false
+    },
+    "updatedBy": {
+        "id": null,
+        "code": null,
+        "value": "admin",
+        "editable": false,
+        "hidden": true,
+        "required": false
+    },
+    "partThresholdContacts": null,
+    "manufactureDate": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": true,
+        "hidden": false,
+        "required": false
+    },
+    "purchasePrice": {
+        "id": null,
+        "code": null,
+        "value": null,
+        "editable": true,
+        "hidden": false,
+        "required": false
+    },
+    "partCustomFields": []
+}
