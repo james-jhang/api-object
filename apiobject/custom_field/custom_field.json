@@ -1,0 +1,75 @@
+{
+    "listContent": {
+        "multiSelect": false,
+        "tags": false,
+        "contacts": false,
+        "contentDetailId": 2361,
+        "timesUsed": {
+            "label": "Number of Times in Use",
+            "value": null,
+            "editable": true
+        },
+        "tiLabel": {
+            "label": "Label",
+            "value": "Test2222",
+            "editable": true
+        },
+        "cmbClass": {
+            "label": "Class",
+            "value": [
+                {
+                    "id": 1500,
+                    "value": "Data Panel"
+                }
+            ],
+            "editable": true
+        },
+        "cmbSubclass": {
+            "label": "Subclass",
+            "value": [],
+            "editable": true
+        },
+        "tiType": {
+            "label": "Type",
+            "value": {
+                "id": 91016,
+                "value": "Text"
+            },
+            "editable": true
+        },
+        "tiDefault": {
+            "label": "Default Value",
+            "value": null,
+            "editable": true
+        },
+        "chkUnique": {
+            "label": "Must Be Unique",
+            "value": false,
+            "editable": true
+        },
+        "chkRequired": {
+            "label": "Required",
+            "value": false,
+            "editable": true
+        },
+        "chkHidden": {
+            "label": "Hidden",
+            "value": false,
+            "editable": true
+        },
+        "chkApplyToModel": false,
+        "cmbUserDefClass": [
+            {
+                "id": 2449,
+                "type": "PART_CLASS",
+                "value": "CPU"
+            }
+        ],
+        "cmbAppliedTo": [
+            "Item",
+            "Part"
+        ],
+        "listValues": [],
+        "panelInfos": []
+    }
+}

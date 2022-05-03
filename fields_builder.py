@@ -15,7 +15,9 @@ if __name__ == '__main__':
         'SoltType': 'PART_SLOT_TYPE',
         'TrackingType' :'PART_TRACKING_TYPE',
         'CustomFieldDataType': 'CUSTOM_FIELD_DATA_TYPE',
-        'ItemStatus': 'ITEM_STATUS'
+        'ItemStatus': 'ITEM_STATUS',
+        'SubtabType': 'SUBTAB_TYPE',
+        'Subclass': 'SUBCLASS'
     }
     field_detail_key_mapping = {
         'PartStatus': 'PART_STATUS',
@@ -37,7 +39,10 @@ if __name__ == '__main__':
             f.write(f'\n\n')
 
         for field, field_key in field_detail_key_mapping.items():
-            f.write(f'class {field}:\n')
+            if field == 'PartClass':
+                f.write(f'class {field}Field:\n')
+            else:
+                f.write(f'class {field}:\n')
             value_id_mappings = lookupObject.field_detail(field_detail_key_mapping[field])
             for value_id in value_id_mappings:
                 value = value_id['value']

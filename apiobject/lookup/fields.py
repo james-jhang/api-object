@@ -62,6 +62,48 @@ class ItemStatus:
 	STORAGE = ValueID('Storage', 5088)
 
 
+class SubtabType:
+	CIRCUIT = ValueID('Circuit', 4401)
+	ITEM = ValueID('Item', 4400)
+	PART = ValueID('Part', 4402)
+	PARTMODEL = ValueID('PartModel', 4403)
+	PROJECT = ValueID('Project', 4404)
+	TICKET = ValueID('Ticket', 4405)
+
+
+class Subclass:
+	AC_BAY = ValueID('AC Bay', 2610)
+	AC_POWER = ValueID('AC Power', 2101)
+	BLADE = ValueID('Blade', 1302)
+	BLADE_CHASSIS = ValueID('Blade Chassis', 1202)
+	BLADE_SERVER = ValueID('Blade Server', 1203)
+	BLANKING_PLATE = ValueID('Blanking Plate', 4102)
+	BUSWAY = ValueID('Busway', 2303)
+	BUSWAY_OUTLET = ValueID('Busway Outlet', 2202)
+	CHASSIS = ValueID('Chassis', 1301)
+	CONTAINER = ValueID('Container', 1104)
+	COOLING_UNIT = ValueID('Cooling Unit', 3502)
+	COOLING_ZONE = ValueID('Cooling Zone', 3501)
+	FUEL_TANK = ValueID('Fuel Tank', 2721)
+	GENERATOR = ValueID('Generator', 2701)
+	HEAT_REJECTION = ValueID('Heat Rejection', 3503)
+	LOAD_DEVICE = ValueID('Load Device', 2611)
+	LOCAL = ValueID('Local', 2301)
+	NETWORKSTACK = ValueID('NetworkStack', 1303)
+	OTHER_DEVICE = ValueID('Other Device', 2612)
+	POWER_PANEL = ValueID('Power Panel', 2621)
+	REMOTE = ValueID('Remote', 2302)
+	SHELF = ValueID('Shelf', 4103)
+	STANDARD = ValueID('Standard', 4101)
+	STANDARD = ValueID('Standard', 1201)
+	SWITCH = ValueID('Switch', 2601)
+	TRANSFORMER = ValueID('Transformer', 2622)
+	UPS_BANK = ValueID('UPS Bank', 2602)
+	UTILITY_FEED = ValueID('Utility Feed', 2711)
+	VIRTUAL_MACHINE = ValueID('Virtual Machine', 1204)
+	WHIP_OUTLET = ValueID('Whip Outlet', 2201)
+
+
 class PartStatus:
 	BROKEN = ValueID('Broken', 2447)
 	LOST = ValueID('Lost', 2448)

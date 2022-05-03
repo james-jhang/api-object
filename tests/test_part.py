@@ -1,14 +1,17 @@
 import pytest
+from apiobject.custom_field import CustomFieldDAO
 # from apiobject.lookup.modelFields import *
-from apiobject.lookup.fields import AssignmentLevel, Class, SoltType, PartStatus, TrackingType
+from apiobject.lookup.fields import *
 from apiobject.part import PartsManagement
+from apiobject.part.part import Part, PartDAO
 from apiobject.part.part_class import PartClass, PartClassDAO
 from apiobject.part.part_model import PartModel, PartModelDAO
-from apiobject.part.part import Part, PartDAO
 # from apiobject.lookup.subtabs import *
 # from apiobject.part.part import *
 # from apiobject.item.item import *
 from apiobject.user.user import Administrator
+
+from .utils import compare
 
 
 @pytest.fixture
@@ -139,15 +142,31 @@ class TestPart:
         part_class_dao.delete(part_class)
         parts_management.disable_parts_management()
 
-    # def test_part_custom_field(self, admin):
-    #     parts_management = PartsManagement(user=admin)
-    #     parts_management.enable_parts_management()
-    #     part_custom_field = CustomField(user=admin)
-    #     part_custom_field.create('Test Custom Field', 'Part', PartClassField.DAUGHTER_BOARD, CustomFieldDataType.TEXT, True)
+    def test_part_custom_field(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        custom_field_dao = CustomFieldDAO(user=admin)
+        custom_field = custom_field_dao.create(
+            label='Test Custom Field',
+            appliesTo=[SubtabType.PART, SubtabType.ITEM],
+            fieldType=CustomFieldDataType.TEXT,
+            classes=[Class.DATA_PANEL],
+            subclasses=[Subclass.BLADE],
+            partClasses=[PartClassField.DAUGHTER_BOARD],
+            applyToModels=True
+        )
 
-    #     # teardown
-    #     part_custom_field.delete()
-    #     parts_management.disable_parts_management()
+        assert custom_field.label == 'Test Custom Field'
+        assert custom_field._type.lower() == CustomFieldDataType.TEXT.value.lower()
+        compare(custom_field.apply_to, [SubtabType.PART.value, SubtabType.ITEM.value])
+        compare(custom_field.classes, [Class.DATA_PANEL.value])
+        compare(custom_field.subclasses, [Subclass.BLADE.value])
+        compare(custom_field.part_classes, [PartClassField.DAUGHTER_BOARD.value])
+        assert custom_field.apply_to_models == True
+
+        # teardown
+        custom_field_dao.delete(custom_field)
+        parts_management.disable_parts_management()
 
     # def test_part_subtab(self, admin):
     #     parts_management = PartsManagement(user=admin)
