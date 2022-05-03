@@ -8,3 +8,5 @@ class PartModel(Resource):
         self.name = name
         self.part_number = part_number
         self.slot_type = slot_type
+
+        self.image: str = None

@@ -64,24 +64,33 @@ class TestPart:
         part_class_dao.delete(part_class)
         parts_management.disable_parts_management()
 
-    # def test_part_model_with_image(self, admin):
-    #     parts_management = PartsManagement(user=admin)
-    #     parts_management.enable_parts_management()
-    #     part_class = PartClass(user=admin)
-    #     part_class.create(
-    #         class_label='Test Part Class',
-    #         assignment_level=AssignmentLevel.DATA_PANEL_PORT,
-    #         classes=[Class.CABINET]
-    #     )
-    #     part_model = PartModel(user=admin)
-    #     image = Image(user=admin)
-    #     image.upload(".\\tests\\1.PNG")
-    #     part_model.create(part_class, '3Com', 'Test Part', 'TEST_123', SoltType.CPU_SOCKET, image=image)
+    def test_part_model_with_image(self, admin):
+        parts_management = PartsManagement(user=admin)
+        parts_management.enable_parts_management()
+        part_class_dao = PartClassDAO(user=admin)
+        part_class = part_class_dao.create(
+            class_label='Test Part Class',
+            assignment_level=AssignmentLevel.DATA_PANEL_PORT,
+            classes=[Class.CABINET]
+        )
+        part_model_dao = PartModelDAO(user=admin)
+        image_url = part_model_dao.upload(".\\tests\\1.PNG")
 
-    #     # teardown
-    #     part_model.delete()
-    #     part_class.delete()
-    #     parts_management.disable_parts_management()
+        part_model = part_model_dao.create(
+            'Test Part Class',
+            '3Com',
+            'Test Part',
+            'TEST_123',
+            SoltType.CPU_SOCKET,
+            image=image_url
+        )
+
+        assert f'{part_model.id}_part.PNG'.lower() in part_model.image.lower()
+
+        # teardown
+        part_model_dao.delete(part_model)
+        part_class_dao.delete(part_class)
+        parts_management.disable_parts_management()
 
     # def test_part(self, admin):
     #     parts_management = PartsManagement(user=admin)

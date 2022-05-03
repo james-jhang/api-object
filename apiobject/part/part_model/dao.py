@@ -9,18 +9,6 @@ from ..part_class.dao import PartClassDAO
 from .converter import PartModelConverter
 
 
-# TODO Is Image a Resource or something else?
-class Image:
-    def __init__(self, user: User) -> None:
-        self.user = user
-        self.uri = None
-
-    def upload(self, image):
-        file = {'file':  ("1.png", open(image, "rb"), "image/png")}
-        resp = self.user.http.request('POST', '/part_models/images', files=file).json()
-        self.uri = resp['results'][0]['newFileName']
-
-
 class PartModelDAO(DAO):
     def __init__(self, user: User) -> None:
         super().__init__(user)
@@ -42,7 +30,7 @@ class PartModelDAO(DAO):
             threshold_contacts: List[User] = [],
             made_in: str = None,
             warranty_period: int = None,
-            image: Image = None) -> PartModel:
+            image: str = None) -> PartModel:
 
         part_class = PartClassDAO(user=self.user).get(name=part_class)
 
@@ -68,7 +56,7 @@ class PartModelDAO(DAO):
             },
             "warrantyPeriod": { "value": warranty_period },
             "partModelStatus": { "code": 93301 },
-            "imageUri": { "value": image.uri if image else None },
+            "imageUri": { "value": image },
             "imageIncluded": { "value": bool(image) },
             "partModelCustomFields": [] # TODO
         }
@@ -78,3 +66,9 @@ class PartModelDAO(DAO):
     def delete(self, part_model: PartModel):
         payload = {'partModels':[{'partModelId': part_model.id}]}
         resp = self.user.http.request('PUT', '/part_models/bulk/delete', json=payload).json()
+
+    def upload(self, image) -> str:
+        file = {'file':  ("1.png", open(image, "rb"), "image/png")}
+        resp = self.user.http.request('POST', '/part_models/images', files=file).json()
+        uri = resp['results'][0]['newFileName']
+        return uri

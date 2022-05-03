@@ -9,7 +9,7 @@ class PartModelConverter(Converter[PartModel]):
 
     @staticmethod
     def to_resource(payload) -> PartModel:
-        return PartModel(
+        part_model = PartModel(
             payload['partModelId'],
             payload['partClass']['value'],
             payload['make']['value'],
@@ -17,3 +17,7 @@ class PartModelConverter(Converter[PartModel]):
             payload['partNumber']['value'],
             payload['slotType']['value'],
         )
+        if payload['imageIncluded']['value']:
+            part_model.image = f"/gdcitdz/images/parts/{payload['partModelId']}_part.png"
+
+        return part_model
