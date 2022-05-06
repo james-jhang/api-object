@@ -11,13 +11,12 @@ from apiobject.part.part_model import PartModel, PartModelDAO
 # from apiobject.item.item import *
 from apiobject.user.user import Administrator
 
-from .utils import compare
+from .utils import compare, certificate
 
 
 @pytest.fixture
 def admin():
-    host = '192.168.1.18'
-    admin = Administrator(host, 'admin', 'Lab1321*')
+    admin = Administrator(*certificate())
     admin.login()
     yield admin
 

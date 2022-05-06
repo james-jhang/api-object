@@ -6,10 +6,11 @@ from apiobject.item import Item, ItemDAO
 
 from apiobject.user.user import Administrator
 
+from .utils import certificate
+
 @pytest.fixture
 def admin():
-    host = '192.168.1.18'
-    admin = Administrator(host, 'admin', 'Lab1321*')
+    admin = Administrator(*certificate())
     admin.login()
     yield admin
 

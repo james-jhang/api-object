@@ -1,13 +1,10 @@
 import pytest
 from apiobject.user.user import Administrator
 
-
-@pytest.fixture()
-def host():
-    yield '192.168.1.18'
+from .utils import certificate
 
 class TestUserLogin:
 
     def test_administrator(self, host):
-        admin = Administrator(host, 'admin', 'Lab1321*')
+        admin = Administrator(*certificate())
         admin.login()
