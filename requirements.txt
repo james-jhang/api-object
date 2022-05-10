@@ -2,3 +2,5 @@ requests
 pytest
 pytest-cov
 pytest-env
+twine
+wheel
